@@ -261,3 +261,19 @@ pub const WGL_CONTEXT_COMPATIBILITY_PROFILE_BIT_ARB = 0x00000002;
 
 pub const ERROR_INVALID_VERSION_ARB = 0x2095;
 pub const ERROR_INVALID_PROFILE_ARB = 0x2096;
+
+pub extern "gdi32" fn StretchDIBits(
+    hDC: HDC,
+    xDest: INT,
+    yDest: INT,
+    DestWidth: INT,
+    DestHeight: INT,
+    xSrc: INT,
+    ySrc: INT,
+    SrcWidth: INT,
+    SrcHeight: INT,
+    lpBits: *c_void,
+    lpbmi: *BITMAPINFO,
+    iUsage: UINT,
+    rop: DWORD,
+) callconv(WINAPI) BOOL;
